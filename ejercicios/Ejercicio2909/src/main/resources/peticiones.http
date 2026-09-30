@@ -1,0 +1,65 @@
+### POST ADD
+
+POST http://localhost:8080/api/monument
+Content-Type: application/json
+
+
+  {
+    "codigoPais": "ES",
+    "nombrePais": "España",
+    "nombreCiudad": "Sevilla",
+    "localizacion": "37,3860,-5.9926",
+    "nombreMonumento": "Catedral y Giralda",
+    "descripcion": "Catedral gótica con antiguo minarete almohade.",
+    "urlFoto": "https://example.com/fotos/giralda.jpg"
+  }
+
+
+###
+
+POST http://localhost:8080/api/monument
+Content-Type: application/json
+
+
+{
+  "codigoPais": "FR",
+  "nombrePais": "Francia",
+  "nombreCiudad": "París",
+  "localizacion": "48.8584,2.2945",
+  "nombreMonumento": "Torre Eiffel",
+  "descripcion": "Torre de hierro construida para la Exposición Universal de 1889.",
+  "urlFoto": "https://example.com/fotos/torre-eiffel.jpg"
+}
+
+###
+
+GET http://localhost:8080/api/monument
+
+###
+
+GET http://localhost:8080/api/monument/1
+
+###
+
+PUT http://localhost:8080/api/monument/1
+Content-Type: application/json
+
+{
+  "codigoPais": "ES",
+  "nombrePais": "España",
+  "nombreCiudad": "Sevilla",
+  "localizacion": "37.3860,-5.9926",
+  "nombreMonumento": "Catedral y Giralda",
+  "descripcion": "Catedral gótica, una de las mayores del mundo, con antiguo minarete almohade.",
+  "urlFoto": "https://example.com/fotos/giralda.jpg"
+}
+
+###
+
+DELETE http://localhost:8080/api/1
+
+
+
+
+
+
