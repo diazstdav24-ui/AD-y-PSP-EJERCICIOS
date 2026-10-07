@@ -23,7 +23,9 @@ public record LibroDTO(
 
                 l.getTitulo(),
                 l.getIsbn(),
-                l.getAutor() != null ? l.getAutor().getNombre() : null,
+                //Aqui le digo que si es diferente de null que coja el nombre y los apellidos, si no que lance ese msj
+                l.getAutor() != null ? l.getAutor().getNombre() + " " + l.getAutor().formatearApellidos() :
+                        "Autor desconocido",
                 l.getAnioPublicacion()
         );
 

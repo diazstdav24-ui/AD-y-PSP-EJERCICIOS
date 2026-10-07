@@ -20,4 +20,24 @@ public class Autor {
     private String nacionalidad;
 
 
+
+
+    public   String formatearApellidos ( ){
+
+
+        if ( apellido2 == null || apellido2.isBlank()){
+
+
+                return apellido1 ;
+
+        }
+
+        return apellido1 + " " + apellido2;
+
+
+
+
+    }
+
+
 }
