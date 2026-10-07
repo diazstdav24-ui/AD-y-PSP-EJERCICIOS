@@ -1,0 +1,44 @@
+@base = http://localhost:8080/api/product
+
+### 1. POST: crear un producto (espera 201 y un id en la respuesta)
+POST {{base}}
+Content-Type: application/json
+
+{
+  "name": "Camiseta",
+  "price": 20.0,
+  "details": "Algodon 100%"
+}
+
+### 2. POST sin nombre (espera 400)
+POST {{base}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": 10.0,
+  "details": "Sin nombre"
+}
+
+### 3. POST con id en el JSON (el id 99 debe ignorarse)
+POST {{base}}
+Content-Type: application/json
+
+{
+  "id": 99,
+  "name": "Intruso",
+  "price": 5.0,
+  "details": "Probando mass assignment"
+}
+
+### 4. GET de todos (apunta cuantos hay ANTES del PUT)
+GET {{base}}
+
+### 5. PUT con id existente (cambia el 1 por un id real)
+PUT {{base}}/1
+Content-Type: application/json
+
+{
+  "name": "Camiseta azul",
+  "price": 25.0,
+  "details": "Algodon, color azul"
