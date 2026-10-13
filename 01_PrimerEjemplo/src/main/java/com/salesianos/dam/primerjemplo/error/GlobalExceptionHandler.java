@@ -2,7 +2,6 @@ package com.salesianos.dam.primerjemplo.error;
 
 import com.salesianos.dam.primerjemplo.error.notfound.CategoryNotFoundException;
 import com.salesianos.dam.primerjemplo.error.notfound.EntityNotFoundException;
-import com.salesianos.dam.primerjemplo.error.notfound.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -37,8 +36,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return problem;
     }
 
-    @ExceptionHandler(InvalidProductException.class)
-    public ProblemDetail handleInvalidProduct(InvalidProductException ex) {
+    @ExceptionHandler(InvalidException.class)
+    public ProblemDetail handleInvalidProduct(InvalidException ex) {
 
         ProblemDetail problem = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
         problem.setTitle("Datos de producto inválidos");

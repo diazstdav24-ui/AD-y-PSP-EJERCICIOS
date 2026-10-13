@@ -1,7 +1,7 @@
 package com.salesianos.dam.primerjemplo.service;
 
 import com.salesianos.dam.primerjemplo.dto.EditProductDto;
-import com.salesianos.dam.primerjemplo.error.InvalidProductException;
+import com.salesianos.dam.primerjemplo.error.InvalidException;
 import com.salesianos.dam.primerjemplo.error.notfound.ProductNotFoundException;
 import com.salesianos.dam.primerjemplo.model.Product;
 import com.salesianos.dam.primerjemplo.repo.ProductRepository;
@@ -72,10 +72,10 @@ public class ProductService {
     private void validateProduct(EditProductDto editProductDto) {
         if (!StringUtils.hasText(editProductDto.name())
                 || !StringUtils.hasText(editProductDto.details())) {
-            throw new InvalidProductException("Product name and details are required");
+            throw new InvalidException("Product name and details are required");
         }
         if (editProductDto.price() < 0) {
-            throw new InvalidProductException("Price is required");
+            throw new InvalidException("Price is required");
         }
     }
 
